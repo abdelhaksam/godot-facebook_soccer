@@ -20,6 +20,7 @@ func _input_event(viewport, event, shape_idx):
 		print(event)
 		if self.mode != RigidBody2D.MODE_RIGID: #If the game hasn't started, start it
 			self.mode = RigidBody2D.MODE_RIGID
+			get_node('../ScoreLabel').hide()
 		bounceOnTouch(self, event)
 			
 
@@ -32,16 +33,14 @@ func bounceOnTouch(ball, event):
 
 func updateScore():
 	score += 1 
-	get_node('../Tree/Score').set_text(str(score))
+	get_node('../Score').set_text(str(score))
 	
 func initGame():
 	initBallPosition()
 	if score > highScore:
 		highScore = score
-		
-	print('Score :', score)
-	print('Best Score :', highScore)
-	
+	get_node('../Score').set_text(str(highScore))
+	get_node('../ScoreLabel').show()
 	score = 0
 	
 		
