@@ -28,7 +28,7 @@ position = Vector2( 195.57, 652.921 )
 z_index = 1
 input_pickable = true
 physics_material_override = SubResource( 1 )
-gravity_scale = 20.0
+gravity_scale = 30.0
 can_sleep = false
 script = ExtResource( 2 )
 
